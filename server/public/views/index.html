@@ -5,27 +5,21 @@
     <title>Blue Team Is The Best</title>
     <script src="vendor/angular/angular.min.js"></script>
     <script src="assets/scripts/client.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="views/style.css" />
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css" >
   </head>
-  <body ng-controller="BlueController">
-    <!-- Bootstrap? -->
+  <body ng-controller="BlueController as blue">
     <main class="container">
-      <button class="btn btn-success" ng-click="getPeople()">Get people</button>
+      <button class="btn btn-success" ng-click="blue.getPeople()">Get people</button>
         <h1><span style="color: green;">Team</span> <span style="color: orange;">Blue</span></h1>
         <div class="container">
-          <div class="user row col-md-3" ng-repeat="user in userList">
-              <p>Name: {{user.name}}</p>
-              <p>Age: {{user.age}}</p>
-              <p>Birthplace: {{user.birthplace}}</p>
-              <p>Location: {{user.location}}</p>
-              <p>Twitter: {{user.twitter}}</p>
-              <button class="btn btn-danger" ng-click="deletePerson(user, $index)">Delete</button>
+          <div class="user row col-md-3" ng-repeat="user in blue.userList">
+              <p>Name: {{ user.name }}</p>
+              <p>Age: {{ user.age }}</p>
+              <p>Birthplace: {{ user.birthplace }}</p>
+              <p>Location: {{ user.location }}</p>
+              <p>Twitter: {{ user.twitter }}</p>
+              <button class="btn btn-danger" ng-click="blue.deletePerson(user, $index)">Delete</button>
           </div>
         </div>
     </main>

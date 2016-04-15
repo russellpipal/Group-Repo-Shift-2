@@ -13,14 +13,6 @@ app.use('/', index);
 var mongoURI = "mongodb://localhost:27017/blueTeam"
 var mongodb = mongoose.connect(mongoURI).connection;
 
-
-
-
-
-
-
-
-
 //  Server Listener
 
 var server = app.listen(3000, function() {
